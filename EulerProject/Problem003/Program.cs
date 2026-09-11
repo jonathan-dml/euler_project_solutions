@@ -1,3 +1,5 @@
+using System.IO.Pipelines;
+
 namespace EulerProject.Problem003;
 
 public static class Program
@@ -8,6 +10,24 @@ public static class Program
     /// </summary>
     public static long LargestPrimeFactor(long number)
     {
-        throw new NotImplementedException();
+        long largest = 1;
+        while(number % 2 == 0)
+        {
+            largest = 2;
+            number /= 2;
+        }
+
+        for(long div = 3; div*div <= number; div++)
+        {
+            while(number % div == 0)
+            {
+                largest = div;
+                number /= div;
+            }
+
+        }
+
+        return number > 1 ? number : largest;
     }
+
 }
