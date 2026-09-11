@@ -8,6 +8,18 @@ public static class Program
     /// </summary>
     public static long SumOfEvenFibonacciNotExceeding(long limit)
     {
-        throw new NotImplementedException();
+        long nMinus1 = 0;
+        long nMinus2 = 1;
+        long n = 0;
+        long sum = 0;
+        while((n = nMinus1 + nMinus2) <= limit)
+        {
+            if(n % 2 == 0)
+                sum += n;
+
+            nMinus2 = nMinus1;
+            nMinus1 = n;
+        }
+        return sum;
     }
 }
