@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="EulerProject.Tests/EulerProject.Tests.csproj" />
+  <Project Path="EulerProject/EulerProject.csproj" />
+</Solution>
